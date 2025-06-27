@@ -1,12 +1,12 @@
 import Desktop from '@/layout/Header/desktopHeader/Desktop';
-import Preloader from '@/layout/Preloader';
+import HeroCard from '@/layout/Header/HeroSection/HeroCard';
 import React from 'react'
 
 const page = () => {
   return (
     <>
-      {/* <Preloader /> */}
       <Desktop />
+      <HeroCard />
     </>
   )
 }
