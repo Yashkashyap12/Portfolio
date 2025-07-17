@@ -33,8 +33,9 @@ const ContactSection = () => {
                 {/* Right Contact Form */}
                 <div
                     ref={formRef}
-                    className="bg-white/10 backdrop-blur-lg rounded-2xl border border-purple-400 shadow-xl p-6 sm:p-8 text-white order-1 md:order-2 w-full max-w-md mx-auto"
+                    className="bg-white/10 dark:bg-white backdrop-blur-lg rounded-2xl border border-purple-400 shadow-xl p-6 sm:p-8 text-white dark:text-black order-1 md:order-2 w-full max-w-md mx-auto"
                 >
+
                     <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-[#8b29dc] bruno-ace-sc-regular">
                         Contact Us
                     </h2>
