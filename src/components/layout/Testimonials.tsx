@@ -67,11 +67,11 @@ const Testimonials = () => {
                 >
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index}>
-                            <div className="bg-[#403e9787] dark:bg-[#8b29dc] rounded-xl shadow-xl text-center min-h-[350px] flex flex-col items-center p-6 backdrop-blur-sm transition-all duration-500 overflow-hidden group hover:backdrop-blur-lg hover:bg-[#703f6ebb] hover:scale-[1.03]">
+                            <div className="bg-white/10 text-black border-purple-400 border dark:bg-[#8b29dc] rounded-xl shadow-xl text-center min-h-[350px] flex flex-col items-center p-6 backdrop-blur-sm transition-all duration-500 overflow-hidden group hover:backdrop-blur-lg hover:bg-[#703f6ebb] hover:scale-[1.03]">
                                 <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
-                                    className="w-20 h-20 rounded-full mb-4 object-cover shadow-lg"
+                                    className="w-20 h-20 rounded-full mb-10 object-cover shadow-lg"
                                 />
                                 <p className="text-base sm:text-lg italic mb-4 line-clamp-4">
                                     "{testimonial.message}"
@@ -80,7 +80,7 @@ const Testimonials = () => {
                                     <h3 className="text-xl font-semibold bruno-ace-sc-regular">
                                         {testimonial.name}
                                     </h3>
-                                    <p className="text-sm text-gray-300">{testimonial.role}</p>
+                                    <p className="text-sm text-gray-500">{testimonial.role}</p>
                                 </div>
                             </div>
                         </SwiperSlide>
