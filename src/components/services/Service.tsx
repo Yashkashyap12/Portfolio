@@ -55,7 +55,7 @@ const Service = () => {
       ref={sectionRef}
       className="py-10 px-6"
     >
-      <h2 className="text-center text-5xl font-bold mb-16 text-[#8b29dc] bruno-ace-sc-regular drop-shadow-lg">
+      <h2 className="dark:text-white text-center text-5xl font-bold mb-16 text-[#8b29dc] bruno-ace-sc-regular drop-shadow-lg">
         Services I Deliver
       </h2>
 

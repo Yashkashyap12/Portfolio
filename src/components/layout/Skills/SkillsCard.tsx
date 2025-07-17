@@ -117,7 +117,7 @@ const SkillsCard = () => {
 
   return (
     <div className="py-16 px-6 dark:bg-[#0d0d0d] transition-colors duration-500">
-      <h2 className="text-4xl font-bold text-center mb-14 text-[#8b29dc] drop-shadow-lg bruno-ace-sc-regular">
+      <h2 className="text-4xl dark:text-white font-bold text-center mb-14 text-[#8b29dc] drop-shadow-lg bruno-ace-sc-regular">
         My Skills
       </h2>
       <div
@@ -136,7 +136,7 @@ const SkillsCard = () => {
               }`}
             >
               {/* Front Side */}
-              <div className="absolute inset-0 bg-purple-500/10 dark:bg-white border border-purple-500 dark:border-purple-400 backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center backface-hidden">
+              <div className="absolute inset-0 bg-purple-500/10 dark:bg-[#8b29dc]  dark:border-purple-400 backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center backface-hidden">
                 <Image
                   src={skill.img}
                   alt={skill.name}
@@ -147,11 +147,11 @@ const SkillsCard = () => {
               </div>
 
               {/* Back Side */}
-              <div className="absolute inset-0 bg-purple-500/10 dark:bg-white border border-purple-500 dark:border-purple-400 backdrop-blur-md text-black dark:text-black rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.2)] flex flex-col items-center justify-center rotate-y-180 backface-hidden px-4 text-center">
-               <span className="text-sm drop-shadow-md text-black dark:text-black">
+              <div className="absolute inset-0 bg-purple-500/10 dark:bg-[#8b29dc] dark:border-purple-400 backdrop-blur-md text-black dark:text-black rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.2)] flex flex-col items-center justify-center rotate-y-180 backface-hidden px-4 text-center">
+               <span className="text-sm drop-shadow-md text-black dark:text-white">
                   {skill.description}
                 </span>
-                <span className="text-lg bruno-ace-sc-regular font-bold text-[#8b29dc] mt-4 tracking-wide">
+                <span className="text-lg bruno-ace-sc-regular font-bold text-[#8b29dc] mt-6 dark:text-white tracking-wide">
                   {skill.name}
                 </span>
               </div>

@@ -48,7 +48,7 @@ const Testimonials = () => {
     return (
         <section className="py-16 px-4 text-white">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl text-center font-bold mb-12 text-[#8b29dc] bruno-ace-sc-regular">
+                <h2 className="dark:text-white text-3xl sm:text-4xl text-center font-bold mb-12 text-[#8b29dc] bruno-ace-sc-regular">
                     What Our Clients Say
                 </h2>
 
@@ -67,7 +67,7 @@ const Testimonials = () => {
                 >
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index}>
-                            <div className="bg-[#403e9787] rounded-xl shadow-xl text-center min-h-[350px] flex flex-col items-center p-6 backdrop-blur-sm transition-all duration-500 overflow-hidden group hover:backdrop-blur-lg hover:bg-[#703f6ebb] hover:scale-[1.03]">
+                            <div className="bg-[#403e9787] dark:bg-[#8b29dc] rounded-xl shadow-xl text-center min-h-[350px] flex flex-col items-center p-6 backdrop-blur-sm transition-all duration-500 overflow-hidden group hover:backdrop-blur-lg hover:bg-[#703f6ebb] hover:scale-[1.03]">
                                 <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
