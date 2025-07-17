@@ -14,38 +14,34 @@ gsap.registerPlugin(useGSAP);
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
-  // Lock scroll on mobile when menu is open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = open ? 'hidden' : '';
   }, [open]);
 
-  // Animate menu items
   useGSAP(() => {
     if (open) {
-      gsap.from(".menu-item", {
+      gsap.from('.menu-item', {
         y: 100,
         opacity: 0,
         duration: 1.5,
-        ease: "power3.out",
+        ease: 'power3.out',
         stagger: 0.3,
       });
     }
   }, { dependencies: [open] });
 
-  const handleLinkClick = () => {
-    setOpen(false); // Close sidebar on link click (mobile UX)
-  };
+  const handleLinkClick = () => setOpen(false);
 
   return (
     <>
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="text-2xl sm:text-3xl fixed md:top-10 right-5 z-50 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition"
+        className={clsx(
+          'text-2xl sm:text-3xl fixed md:top-10 right-5 z-50 p-2 rounded-full shadow-md transition',
+          'bg-white text-black hover:bg-gray-100',
+          'dark:bg-black dark:text-white dark:hover:bg-gray-800'
+        )}
       >
         {open
           ? <IoMdClose className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -55,7 +51,10 @@ const Sidebar = () => {
       {/* Sidebar Panel */}
       <div
         className={clsx(
-          'fixed top-0 right-0 h-full w-[85%] sm:w-[60%] md:w-[40%] backdrop-blur-xl bg-black/20 text-white z-40 shadow-2xl border border-white/20 transition-transform duration-700 ease-in-out',
+          'fixed top-0 right-0 h-full w-[85%] sm:w-[60%] md:w-[40%]',
+          'backdrop-blur-xl bg-white/10 dark:bg-black/20',
+          'text-black dark:text-white z-40 shadow-2xl border border-black/10 dark:border-white/20',
+          'transition-transform duration-700 ease-in-out',
           open ? 'translate-x-0' : 'translate-x-full'
         )}
       >
@@ -68,7 +67,7 @@ const Sidebar = () => {
                   <Link
                     href={x.href}
                     onClick={handleLinkClick}
-                    className="text-white hover:text-[#8b29dc] transition-all duration-500"
+                    className="transition-all duration-500 text-black hover:text-[#8b29dc] dark:text-white dark:hover:text-[#8b29dc]"
                   >
                     {x.name}
                   </Link>
@@ -78,7 +77,7 @@ const Sidebar = () => {
           </div>
 
           {/* Footer */}
-          <div className="text-center text-sm righteous-regular text-white mt-10">
+          <div className="text-center text-sm righteous-regular text-black dark:text-white mt-10">
             &copy; {new Date().getFullYear()} YASH KASHYAP
           </div>
         </div>

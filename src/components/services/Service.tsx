@@ -56,8 +56,9 @@ const Service = () => {
       className="py-10 px-6"
     >
       <h2 className="text-center text-5xl font-bold mb-16 text-[#8b29dc] bruno-ace-sc-regular drop-shadow-lg">
-       Services I Deliver
+        Services I Deliver
       </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {services.map((service, i) => (
           <div
@@ -70,7 +71,9 @@ const Service = () => {
             <h3 className="text-2xl font-bold mb-3 text-[#8b29dc] bruno-ace-sc-regular">
               {service.title}
             </h3>
-            <p className="text-[#8b29dc] text-lg">{service.description}</p>
+            <p className="text-[#8b29dc] dark:text-white text-lg">
+              {service.description}
+            </p>
           </div>
         ))}
       </div>

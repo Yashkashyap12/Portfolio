@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import PortfolioImg from '../../../assets/images/portfolioimg.png'
+import PortfolioImg from '../../../assets/images/portfolioimg.png';
 import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -33,12 +33,15 @@ const AboutSection = () => {
                 duration: 1.4,
                 ease: 'power3.out',
             },
-            '<' // Parallel animation
+            '<'
         );
     }, []);
 
     return (
-        <section id="about-trigger" className="w-full px-4 sm:px-8 md:px-16 sm:py-12">
+        <section
+            id="about-trigger"
+            className="w-full px-4 sm:px-8 md:px-16 sm:py-12 transition-colors duration-500"
+        >
             <div className="flex flex-col md:flex-row items-center gap-10">
                 {/* Image Section */}
                 <div
@@ -54,13 +57,12 @@ const AboutSection = () => {
                     </div>
                 </div>
 
-
                 {/* Text Section */}
                 <div
                     id="text-2"
                     className="w-full md:w-1/2 text-center md:text-left mb-3"
                 >
-                    <p className="text-lg sm:text-xl leading-relaxed text-black">
+                    <p className="text-lg sm:text-xl leading-relaxed text-black dark:text-white">
                         I’m a passionate full-stack developer with experience in building scalable web applications using{' '}
                         <strong className="text-[#8b29dc]">React</strong>,{' '}
                         <strong className="text-[#8b29dc]">Next.js</strong>,{' '}
@@ -73,16 +75,15 @@ const AboutSection = () => {
                     {/* Download CV Button */}
                     <div className="mb-2 flex justify-center md:justify-start">
                         <a
-                            href="/YashKashyap.pdf" // don't include `/public`
+                            href="/YashKashyap.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            download // optional: add this if you want to force download
-                            className="mt-8 inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-purple-300 to-purple-500 text-black font-semibold border border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:from-purple-500 hover:to-purple-700 hover:text-white bruno-ace-sc-regular tracking-wide"
+                            download
+                            className="mt-8 inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-purple-300 to-purple-500 text-black font-semibold border border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:from-purple-500 hover:to-purple-700 hover:text-white dark:text-white dark:border-purple-500 dark:hover:text-white"
                         >
                             View / Download CV
                         </a>
                     </div>
-
                 </div>
             </div>
         </section>
