@@ -20,7 +20,7 @@ const Navbar = () => {
     });
 
     return (
-        <div className="w-full px-4 sm:px-6 lg:px-10 py-10 flex items-center justify-between text-black dark:bg-black dark:text-white transition-colors duration-300">
+        <div className="w-full px-4 sm:px-6 lg:px-10 py-10 flex items-center justify-between text-white dark:bg-black dark:text-white transition-colors duration-300">
             <div
                 id="logo"
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold bruno-ace-sc-regular tracking-wide text-purple-700 dark:text-purple-400"

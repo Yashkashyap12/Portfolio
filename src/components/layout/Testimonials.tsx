@@ -10,35 +10,35 @@ const testimonials = [
     {
         name: "Rohit Sharma",
         role: "CEO, TechNova",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
         message:
             "Their work is truly exceptional! The team was responsive, creative, and delivered exactly what we needed.",
     },
     {
         name: "Ananya Verma",
         role: "Founder, Designly",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
         message:
             "I'm beyond impressed with their service. Communication was smooth and the final product exceeded expectations.",
     },
     {
         name: "Amit Joshi",
         role: "CTO, Buildify",
-        image: "https://randomuser.me/api/portraits/men/90.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
         message:
             "Professional, quick and reliable. We’re definitely coming back for more projects!",
     },
     {
         name: "Priya Singh",
         role: "Marketing Head, BrandNest",
-        image: "https://randomuser.me/api/portraits/women/68.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
         message:
             "Top-notch delivery and seamless interaction throughout. Highly recommend them to any business.",
     },
     {
         name: "Kunal Patel",
         role: "Product Manager, Appify",
-        image: "https://randomuser.me/api/portraits/men/75.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
         message:
             "Fantastic experience from start to finish. Timely updates, excellent support, and great final output.",
     },

@@ -67,7 +67,7 @@ const Sidebar = () => {
                   <Link
                     href={x.href}
                     onClick={handleLinkClick}
-                    className="transition-all duration-500 text-black hover:text-[#8b29dc] dark:text-white dark:hover:text-[#8b29dc]"
+                    className="transition-all duration-500 text-[#8b29dc] hover:text-[#b378f7] dark:text-white dark:hover:text-[#8b29dc]"
                   >
                     {x.name}
                   </Link>
