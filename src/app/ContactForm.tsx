@@ -4,7 +4,6 @@ import gsap from "gsap";
 import Lottie from "lottie-react";
 import Swal from "sweetalert2";
 import Contact from "../components/contact.json";
-import { contactAction } from '../app/contact/contact.action';
 
 const ContactSection = () => {
   const formRef = useRef(null);
@@ -19,19 +18,29 @@ const ContactSection = () => {
 
   const handleSubmit = async (e:any) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
-    const res = await contactAction(formData); // assuming contactAction returns something
 
-    // Show SweetAlert
-    Swal.fire({
-      icon: 'success',
-      title: 'Message Sent!',
-      text: 'Thank you for contacting us. We’ll get back to you shortly.',
-      confirmButtonColor: '#8b29dc'
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
     });
 
-    e.target.reset(); // Reset form
+    if (res.ok) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: 'Thank you for contacting us. We’ll get back to you shortly.',
+        confirmButtonColor: '#8b29dc',
+      });
+      e.target.reset();
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Failed!',
+        text: 'Something went wrong. Try again later.',
+        confirmButtonColor: '#8b29dc',
+      });
+    }
   };
 
   return (

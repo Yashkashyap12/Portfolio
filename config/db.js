@@ -1,21 +1,26 @@
-import mysql from "mysql2/promise";
+import { db } from "../../../../config/db";
 
-export const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "yash@8808",
-  database: "Contact_db",
-});
-
-const testConnection = async () => {
+export async function POST(req) {
   try {
-    const connection = await db.getConnection();
-    console.log("Database connected successfully");
-    connection.release();
-  } catch (err) {
-    console.error("Connection Failed", err);
-    process.exit(1);
-  }
-};
+    const formData = await req.formData();
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
 
-testConnection();
+    await db.execute(
+      "INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)",
+      [name, email, message]
+    );
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("API Error:", error);
+    return new Response(JSON.stringify({ error: "Something went wrong." }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+}
