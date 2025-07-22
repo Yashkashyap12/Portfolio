@@ -75,6 +75,19 @@ const ContactSection = () => {
                 Your Email
               </label>
             </div>
+            
+            <div className="relative">
+              <input
+                type="phone"
+                name="phone"
+                placeholder="Your phone"
+                required
+                className="w-full border dark:border-white border-[#8b29dc]/30 rounded-xl px-4 pt-6 pb-2 text-black dark:text-white placeholder-transparent peer bg-transparent"
+              />
+              <label className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
+                Your Phone Number
+              </label>
+            </div>
 
             {/* Message */}
             <div className="relative">
