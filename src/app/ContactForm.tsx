@@ -16,33 +16,6 @@ const ContactSection = () => {
     );
   }, []);
 
-  const handleSubmit = async (e:any) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (res.ok) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Message Sent!',
-        text: 'Thank you for contacting us. We’ll get back to you shortly.',
-        confirmButtonColor: '#8b29dc',
-      });
-      e.target.reset();
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Failed!',
-        text: 'Something went wrong. Try again later.',
-        confirmButtonColor: '#8b29dc',
-      });
-    }
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-16 sm:py-20">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -66,7 +39,15 @@ const ContactSection = () => {
             Contact Us
           </h2>
 
-          <form className="space-y-5" onSubmit={handleSubmit}>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="space-y-5"
+          >
+            {/* Web3Forms Hidden Fields */}
+            <input type="hidden" name="access_key" value="7f21cfaa-7320-4103-88d1-d1beea2488ac" />
+            <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+
             {/* Name */}
             <div className="relative">
               <input
@@ -117,6 +98,7 @@ const ContactSection = () => {
               Send Message
             </button>
           </form>
+
         </div>
       </div>
     </section>
