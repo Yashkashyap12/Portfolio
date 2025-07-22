@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Lottie from 'lottie-react';
 import Robo from '../../../Robo.json';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);
 
@@ -20,7 +21,7 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-10 px-4 sm:px-10 py-12 md:min-h-[35rem]">
-      
+
       {/* Left Section */}
       <div className="w-full md:w-1/2 text-center md:text-left">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bruno-ace-sc-regular leading-tight dark:text-white">
@@ -31,7 +32,9 @@ const Hero = () => {
           Creative Full Stack Developer crafting sleek, responsive web experiences using React, Tailwind CSS, and .NET. Passionate about building impactful digital solutions that blend performance and design.
         </p>
         <button className="mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-300 to-purple-500 text-black font-semibold border border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:from-purple-500 hover:to-purple-700 hover:text-white bruno-ace-sc-regular tracking-wide dark:text-white">
-          View Projects
+          <Link href='/View-Projects.pdf'>
+            View Projects
+          </Link>
         </button>
       </div>
 
