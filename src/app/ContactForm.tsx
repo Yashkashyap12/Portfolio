@@ -16,6 +16,35 @@ const ContactSection = () => {
     );
   }, []);
 
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thanks for reaching out. We’ll get back to you soon.",
+        });
+        e.target.reset();
+      } else {
+        throw new Error("Something went wrong.");
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Failed to send your message. Please try again later.",
+      });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-16 sm:py-20">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -39,25 +68,21 @@ const ContactSection = () => {
             Contact Us
           </h2>
 
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            className="space-y-5"
-          >
-            {/* Web3Forms Hidden Fields */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Hidden Fields */}
             <input type="hidden" name="access_key" value="7f21cfaa-7320-4103-88d1-d1beea2488ac" />
-            <input type="hidden" name="redirect" value="https://web3forms.com/success" />
 
             {/* Name */}
             <div className="relative">
               <input
                 type="text"
+                id="name"
                 name="name"
                 placeholder="Your Name"
                 required
                 className="w-full border dark:border-white border-[#8b29dc]/30 rounded-xl px-4 pt-6 pb-2 text-black dark:text-white placeholder-transparent peer bg-transparent"
               />
-              <label className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
+              <label htmlFor="name" className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
                 Your Name
               </label>
             </div>
@@ -66,25 +91,30 @@ const ContactSection = () => {
             <div className="relative">
               <input
                 type="email"
+                id="email"
                 name="email"
                 placeholder="Your Email"
                 required
                 className="w-full border dark:border-white border-[#8b29dc]/30 rounded-xl px-4 pt-6 pb-2 text-black dark:text-white placeholder-transparent peer bg-transparent"
               />
-              <label className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
+              <label htmlFor="email" className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
                 Your Email
               </label>
             </div>
-            
+
+            {/* Phone */}
             <div className="relative">
               <input
-                type="phone"
+                type="tel"
+                id="phone"
                 name="phone"
-                placeholder="Your phone"
+                placeholder="Your Phone"
+                pattern="[0-9]{10,15}"
+                title="Please enter a valid phone number"
                 required
                 className="w-full border dark:border-white border-[#8b29dc]/30 rounded-xl px-4 pt-6 pb-2 text-black dark:text-white placeholder-transparent peer bg-transparent"
               />
-              <label className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
+              <label htmlFor="phone" className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
                 Your Phone Number
               </label>
             </div>
@@ -92,13 +122,14 @@ const ContactSection = () => {
             {/* Message */}
             <div className="relative">
               <textarea
+                id="message"
                 name="message"
                 rows={4}
                 placeholder="Your Message"
                 required
                 className="w-full border dark:border-white border-[#8b29dc]/30 rounded-xl px-4 pt-6 pb-2 text-black dark:text-white placeholder-transparent peer bg-transparent"
               ></textarea>
-              <label className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
+              <label htmlFor="message" className="absolute left-4 top-2 text-sm text-black/60 dark:text-white peer-placeholder-shown:top-5 peer-placeholder-shown:text-base transition-all">
                 Your Message
               </label>
             </div>
@@ -111,7 +142,6 @@ const ContactSection = () => {
               Send Message
             </button>
           </form>
-
         </div>
       </div>
     </section>
