@@ -3,14 +3,18 @@ import Navbar from '@/components/layout/Header/Navbar'
 import Service from '@/components/services/Service'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     return (
-        <>
+        <div className="flex flex-col min-h-screen">
             <Navbar />
-            <Service />
+
+            <main className="flex-grow">
+                <Service />
+            </main>
+
             <Footer />
-        </>
+        </div>
     )
 }
 
-export default page
+export default Page
