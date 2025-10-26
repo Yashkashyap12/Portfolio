@@ -19,7 +19,7 @@ export const MenuItems = [
     {
         id:4,
         name:'Resume',
-        href:'/YashKashyap.pdf'
+        href:'/YASH-KASHYAP-CV.pdf'
     },
 ]
 

@@ -75,7 +75,7 @@ const AboutSection = () => {
                     {/* Download CV Button */}
                     <div className="mb-2 flex justify-center md:justify-start">
                         <a
-                            href="/YashKashyap.pdf"
+                            href="/YASH-KASHYAP-CV.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             download
